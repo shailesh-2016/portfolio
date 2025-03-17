@@ -483,10 +483,10 @@ body {
 .grid-container {
   margin-top: 35px;
   display: grid;
-  grid-template-columns: repeat(3, 320px);
+  grid-template-columns: repeat(3, 380px);
   gap: 45px;
   justify-content: center;
-  padding: 30px;
+  padding: 10px;
 }
 
 @media (max-width: 1024px) {
