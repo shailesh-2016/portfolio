@@ -1,7 +1,3 @@
-'use strict';
-
-
-
 /**
  * navbar toggle
  */
@@ -26,10 +22,6 @@ for (let i = 0; i < navbarLinks.length; i++) {
     navToggleBtn.classList.toggle("active");
   });
 }
-
-
-
-
 
 /**
  * back to top & header
