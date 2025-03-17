@@ -483,7 +483,7 @@ body {
 .grid-container {
   margin-top: 35px;
   display: grid;
-  grid-template-columns: repeat(3, 300px); /* Reduced the card size */
+  grid-template-columns: repeat(3, 380px);
   gap: 45px;
   justify-content: center;
   padding: 10px;
@@ -506,7 +506,7 @@ body {
   }
   .grid-item {
     width: 100%;
-    height: 200px; /* Reduced height for mobile */
+    height: 250px;
   }
 }
 
@@ -516,8 +516,8 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.9s, box-shadow 0.9s;
-  width: 300px; /* Reduced width */
-  height: 300px; /* Reduced height */
+  width: 400px;
+  height: 400px;
 }
 
 .grid-item:hover {
@@ -578,8 +578,7 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   margin-top: 10px;
-}
-
+} 
 
 /*-----------------------------------*\
   #SKILLS
