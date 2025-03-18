@@ -484,7 +484,7 @@ body {
   margin-top: 35px;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Columns ko flexible banaya */
-  gap: 45px;
+  gap: 50px;
   justify-content: center;
   padding: 10px;
 }
@@ -583,7 +583,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
   .grid-item {
-    height: 400px;
+    height: 430px;
   }
 }
 
