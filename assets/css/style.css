@@ -483,91 +483,10 @@ body {
 .grid-container {
   margin-top: 35px;
   display: grid;
-  grid-template-columns: repeat(3, 380px);
+  grid-template-columns: repeat(3, 1fr); /* Columns ko flexible banaya */
   gap: 45px;
   justify-content: center;
   padding: 10px;
-}
-
-@media (max-width: 1024px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .grid-item {
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Adjust the grid layout for mobile screens */
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(1, 100%);
-  }
-  .grid-item {
-    width: 80%; /* Reduced width for mobile screens */
-    height: 180px; /* Reduced height for mobile */
-    margin: 0 auto; /* Center the card */
-  }
-}
-
-/* New media query for small screens (e.g., phones) */
-@media (max-width: 480px) {
-  .grid-container {
-    grid-template-columns: repeat(1, 100%);
-    gap: 15px; /* Reduce gap for very small screens */
-  }
-
-  .grid-item {
-    width: 90%; /* Slightly wider for better use of space */
-    height: 130px; /* Further reduce height for very small screens */
-  }
-
-  .grid-item .content {
-    height: 60%; /* Adjust content height for very small screens */
-    padding: 8px; /* Reduce padding for very small screens */
-  }
-
-  .grid-item .content a {
-    padding: 4px 8px; /* Smaller button size for very small screens */
-    font-size: 11px; /* Smaller font size for very small screens */
-  }
-}
-
-/* Additional adjustments for very small screens (e.g., below 360px) */
-@media (max-width: 360px) {
-  .grid-item {
-    width: 95%; /* Use more screen width */
-    height: 90px; /* Further reduce height for very small screens */
-  }
-
-  .grid-item .content {
-    height: 70%; /* Increase content height for better visibility */
-    padding: 5px; /* Minimal padding for very small screens */
-  }
-
-  .grid-item .content a {
-    padding: 3px 6px; /* Even smaller button size */
-    font-size: 10px; /* Smaller font size for very small screens */
-  }
-}
-
-/* Additional adjustments for extremely small screens (e.g., below 300px) */
-@media (max-width: 300px) {
-  .grid-item {
-    width: 98%; /* Use almost full width */
-    height: 80px; /* Extremely small height */
-  }
-
-  .grid-item .content {
-    height: 80%; /* Increase content height for better visibility */
-    padding: 3px; /* Minimal padding for extremely small screens */
-  }
-
-  .grid-item .content a {
-    padding: 2px 4px; /* Tiny button size */
-    font-size: 9px; /* Extremely small font size */
-  }
 }
 
 .grid-item {
@@ -576,8 +495,8 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.9s, box-shadow 0.9s;
-  width: 400px;
-  height: 400px;
+  width: 100%; /* Width ko 100% kiya */
+  height: 400px; /* Height ko bada kiya */
 }
 
 .grid-item:hover {
@@ -638,6 +557,44 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   margin-top: 10px;
+}
+
+
+@media (min-width: 600px) and (max-width: 767px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-item {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-item {
+    height: 400px;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-item {
+    height: 400px;
+  }
+}
+
+@media (max-width: 599px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 100%);
+  }
+  .grid-item {
+    width: 100%; 
+    height: 400px; 
+  }
 }
 
 /*-----------------------------------*\
