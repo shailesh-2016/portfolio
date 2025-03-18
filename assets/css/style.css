@@ -505,8 +505,32 @@ body {
     grid-template-columns: repeat(1, 100%);
   }
   .grid-item {
-    width: 90%;
-    height: 250px;
+    width: 70%; /* Reduced width for mobile screens */
+    height: 200px; /* Reduced height for mobile */
+    margin: 0 auto; /* Center the card */
+  }
+}
+
+/* New media query for small screens (e.g., phones) */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 100%);
+    gap: 25px; /* Reduce gap for small screens */
+  }
+
+  .grid-item {
+    width: 90%; /* Increase width slightly for better use of space */
+    height: 180px; /* Further reduce height for small screens */
+  }
+
+  .grid-item .content {
+    height: 70%; /* Increase content height for better visibility */
+    padding: 15px; /* Adjust padding for small screens */
+  }
+
+  .grid-item .content a {
+    padding: 6px 12px; /* Smaller button size for small screens */
+    font-size: 12px; /* Smaller font size for small screens */
   }
 }
 
@@ -578,7 +602,7 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   margin-top: 10px;
-} 
+}
 
 /*-----------------------------------*\
   #SKILLS
