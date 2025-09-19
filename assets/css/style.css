@@ -483,7 +483,7 @@ body {
 .grid-container {
   margin-top: 35px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Columns ko flexible banaya */
+  grid-template-columns: repeat(3, 1fr);
   gap: 50px;
   justify-content: center;
   padding: 10px;
@@ -493,26 +493,27 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.9s, box-shadow 0.9s;
-  width: 100%; /* Width ko 100% kiya */
-  height: 400px; /* Height ko bada kiya */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  width: 100%;
+  height: 400px;
+  background: #fff;
 }
 
 .grid-item:hover {
-  box-shadow: 0 30px 20px rgba(0, 0, 0, 0.5);
-  transform: translateY(-30px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transform: translateY(-15px) scale(1.02);
 }
 
 .grid-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 5s;
+  transition: transform 1.5s ease;
 }
 
 .grid-item:hover img {
-  transform: scale(2);
+  transform: scale(1.1);
 }
 
 .grid-item::before {
@@ -522,8 +523,8 @@ body {
   bottom: -100%;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  transition: bottom 0.9s;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  transition: bottom 0.5s ease;
   z-index: 2;
 }
 
@@ -536,17 +537,30 @@ body {
   bottom: -100%;
   left: 0;
   width: 100%;
-  height: 50%;
   color: #fff;
-  padding: 0 20px;
+  padding: 20px;
   box-sizing: border-box;
   text-align: left;
   z-index: 3;
-  transition: bottom 0.9s;
+  transition: bottom 0.5s ease;
+  font-family: "Poppins", sans-serif;
 }
 
 .grid-item:hover .content {
   bottom: 0;
+}
+
+.grid-item .content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.grid-item .content p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  opacity: 0.9;
 }
 
 .grid-item .content a {
@@ -557,9 +571,17 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
+.grid-item .content a:hover {
+  background: #e64a19;
+  transform: scale(1.05);
+}
 
+/* Responsive Media Queries */
 @media (min-width: 600px) and (max-width: 767px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
@@ -592,10 +614,11 @@ body {
     grid-template-columns: repeat(1, 100%);
   }
   .grid-item {
-    width: 100%; 
-    height: 400px; 
+    width: 100%;
+    height: 400px;
   }
 }
+
 
 /*-----------------------------------*\
   #SKILLS
@@ -604,7 +627,7 @@ body {
 .section__card {
   margin-top: 25px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
   padding: 20px;
 }
@@ -612,17 +635,19 @@ body {
 .card {
   height: 25rem;
   width: 100%;
-  border: 2px solid #fff;
+  border-radius: 12px;
   padding: 1.5rem;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.05);
   box-sizing: border-box;
   overflow: hidden;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .card__header {
@@ -631,22 +656,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s;
+  transition: transform 0.4s ease;
   overflow: hidden;
 }
 
 .card__header img {
-  width: 7rem;
-  transition: 0.3s;
+  width: 8rem;
+  transition: transform 1s ease;
 }
 
 .card:hover .card__header img {
-  transform: scale(3);
+  transform: scale(1.5) rotate(3deg);
 }
 
 .card__footer {
   position: relative;
-  height: auto;
   background-color: transparent;
   box-sizing: border-box;
   overflow: hidden;
@@ -656,55 +680,49 @@ body {
 .card__footer h2 {
   color: #fff;
   margin: 0;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   padding-left: 2px;
+  font-family: "Poppins", sans-serif;
 }
 
 .card__footer ul {
-  margin: 0;
+  margin: 8px 0 0 0;
   padding: 0;
   list-style: none;
 }
 
 .card__footer ul li {
   color: #31e2c2;
-  font-size: 1.4rem;
-  font-weight: 100;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0;
   transform: translateX(-100%);
-  transition: 0.3s;
-  transition-duration: 0;
-  transition-delay: 0.3s;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .card:hover .card__footer ul li {
+  opacity: 1;
   transform: translateX(0);
-  transition-timing-function: cubic-bezier(0, 1.5, 1, 1);
-  transition-delay: 0.3s;
-  transition-duration: 0.3s;
-  font-weight: 600;
 }
 
 .card:hover .card__footer ul li:nth-child(1) {
-  transition-delay: 0.2s;
+  transition-delay: 0.15s;
 }
-
 .card:hover .card__footer ul li:nth-child(2) {
-  transition-delay: 0.4s;
+  transition-delay: 0.3s;
 }
-
 .card:hover .card__footer ul li:nth-child(3) {
+  transition-delay: 0.45s;
+}
+.card:hover .card__footer ul li:nth-child(4) {
   transition-delay: 0.6s;
 }
-
-.card:hover .card__footer ul li:nth-child(4) {
-  transition-delay: 0.8s;
-}
-
 .card:hover .card__footer ul li:nth-child(5) {
-  transition-delay: 1s;
+  transition-delay: 0.75s;
 }
+
 
 /*-----------------------------------*\
   #CONTACT
